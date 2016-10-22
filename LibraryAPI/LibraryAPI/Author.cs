@@ -9,12 +9,17 @@ namespace LibraryAPI
 {
     public class Author
     {
-        #region
+        #region Properties
         [Key]
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Biography { get; set; }
+
+        /// <summary>
+        /// when you have a collection of something you don't write/create a foreign key
+        /// </summary>
+        public virtual ICollection<Book> Books { get; set; }
         #endregion
     }
 }

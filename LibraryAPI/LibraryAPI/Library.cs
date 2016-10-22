@@ -28,15 +28,19 @@ namespace LibraryAPI
             using (var model = new LibraryModel())
             {
                 model.Books.Add(book);
+                model.SaveChanges();
             }
 
         }
         public static void PrintBooks()
         {
-            foreach (var book in Books)
+            using (var model = new LibraryModel())
             {
-                Console.WriteLine("Title: {0}, ISBN: {1}, Price: {2}, Published: {3}",
-                    book.Title, book.ISBN, book.Price, book.PublishedYear);
+                foreach (var book in model.Books)
+                {
+                    Console.WriteLine("Title: {0}, ISBN: {1}, Price: {2}, Published: {3}",
+                        book.Title, book.ISBN, book.Price, book.PublishedYear);
+                }
             }
         }
         #endregion
