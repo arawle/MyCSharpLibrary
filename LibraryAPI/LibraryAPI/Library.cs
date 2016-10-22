@@ -25,7 +25,11 @@ namespace LibraryAPI
         #region Methods
         public static void AddBook(Book book)
         {
-            Books.Add(book);
+            using (var model = new LibraryModel())
+            {
+                model.Books.Add(book);
+            }
+
         }
         public static void PrintBooks()
         {
