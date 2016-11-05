@@ -11,16 +11,8 @@ namespace LibraryAPI
         #region Properties
         public static string Name { get; set; }
         public static string Address { get; set; }
-        /// <summary>
-        /// Collection of books
-        /// </summary>
-        public static List<Book> Books { get; set; }
         #endregion
         #region Constructors
-        static Library()
-        {
-            Books = new List<Book>(); 
-        }
         #endregion
         #region Methods
         public static void AddBook(Book book)
