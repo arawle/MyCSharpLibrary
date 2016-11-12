@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace LibraryAPI
 {
-    static class Library
+    public enum RentalTypes
+    {
+        Book,
+        Audio,
+        Video 
+    }
+
+    public static class Library
     {
         #region Properties
         public static string Name { get; set; }
